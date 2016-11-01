@@ -44,7 +44,7 @@ resource "aws_instance" "web" {
     NewTag2  = "this is an example using spaces"
   }
 
-  count = "2"
+  count = "1"
 }
 
 output "public_ip" {
