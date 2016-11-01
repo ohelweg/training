@@ -1,0 +1,15 @@
+# Configure the DNSimple provider
+provider "dnsimple" {
+    token = "some_token"
+    email = "training@domain.com"
+}
+
+# Create a record
+resource "dnsimple_record" "www" {
+    domain = "terraform.rocks"
+    name = "training"
+    value = "${aws_instance.web.0.public_ip}"
+    type = "A"
+    ttl = 3600
+}
+
